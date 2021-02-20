@@ -1,0 +1,20 @@
+p {
+    color: blue;
+}
+
+#punchline {
+    color: crimson;
+}
+
+.container{
+    text-align: center;
+}
+
+.banner{
+    border: black solid;
+    padding: 3em;
+}
+
+h2 {
+    padding: 1em;
+}

@@ -1,0 +1,9 @@
+.card {
+    width: 18rem;
+}
+
+.container{
+    display: flex;
+     flex-direction: row; 
+     flex-wrap: wrap;  
+}
