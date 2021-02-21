@@ -1,9 +1,11 @@
 p {
     color: blue;
+    font-size: large;
 }
 
 #punchline {
     color: crimson;
+    font-size: larger;
 }
 
 .card{
@@ -27,4 +29,8 @@ p {
 
 h2 {
     padding: 1em;
+}
+
+h6{
+    padding: 2em;
 }

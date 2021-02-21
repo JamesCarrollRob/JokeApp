@@ -64,8 +64,8 @@ function clearJoke() {
  function addButton() {
    var newDiv = document.createElement("div");
    newDiv.className = "btnDiv";
-   var btnOption = document.createElement("h5");
-   btnOption.innerText = "Do you like this joke?";
+   var btnOption = document.createElement("h6");
+   btnOption.innerText = "Do you like this joke? ";
    document.getElementById("punchline").appendChild(newDiv.appendChild(btnOption));
    var btn = document.createElement("button");
    var btn2 = document.createElement("button");
