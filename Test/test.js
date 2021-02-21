@@ -37,11 +37,7 @@ function getJokes(){
 jokeButton.addEventListener("click", () => {
   if (jokeList.length === 0) {
     getJokes();
-    //  .then(joke = jokeList[Math.floor(Math.random() * jokeList.length)])
-    //  .then(console.log(joke))
-    //  .then(jokeList.pop(joke))
-    //  .then(console.log(jokeList.length))
-    //  .then(tagline = joke.setup);
+    
   } else {
   joke = jokeList[Math.floor(Math.random() * jokeList.length)];
       console.log(joke);

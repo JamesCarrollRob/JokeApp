@@ -6,6 +6,10 @@ p {
     color: crimson;
 }
 
+.card{
+    width: 18rem;
+}
+
 .container{
     text-align: center;
 }
@@ -13,6 +17,12 @@ p {
 .banner{
     border: black solid;
     padding: 3em;
+}
+
+.savedJokes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 h2 {

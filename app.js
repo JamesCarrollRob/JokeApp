@@ -12,11 +12,13 @@ const p2 = document.getElementById('punchline')
 const jokeButton = document.getElementById('getJoke')
 const setButton = document.getElementById('getSetup')
 const punchButton = document.getElementById('getPunch')
+const cardContainer = document.getElementById("cards");
 var jokeList = []
-var fetchCheck = false //proves whether or not fetch request was successfull 
+var fetchCheck = false //proves whether or not fetch the get joke button was pushed first when page first loads
 
 
-//Fetches joke object from api and saves the 3rd joke as a variable
+
+//Fetches an array of ten joke objects and saves the object at index 3 as a variable
 function getJoke(){
 fetch(url)
   .then(response => response.json())
@@ -36,39 +38,60 @@ fetch(url)
 
 
 
-   
+//****Displays the setup for the joke from the joke object****/
 function displaySetup (){
-  
   
   p.innerText = tagline.toUpperCase();
 
 }
+//****End of function****/
 
+//****Displays the punchline for the joke from the joke object****/
 function displayPunchline (){
   p2.innerText = punchline.toUpperCase();
   
 }
+//****End of function****/
 
+//****Clears the setup and punchline****/
 function clearJoke() {
   p.innerText = '';
   p2.innerText = '';
 }
+//****End of function****/
 
+//****Creates 2 buttons after the punchline and adds event listeners to those buttons****/
  function addButton() {
+   var newDiv = document.createElement("div");
+   newDiv.className = "btnDiv";
+   var btnOption = document.createElement("h5");
+   btnOption.innerText = "Do you like this joke?";
+   document.getElementById("punchline").appendChild(newDiv.appendChild(btnOption));
    var btn = document.createElement("button");
-   btn.className = "btn btn-primary me-md-2"
-   btn.innerText=("Do you like this joke?");
-   document.getElementById("punchline").appendChild(btn);
-   btn.addEventListener("click", () =>{
-     jokeList.push(tagline);
-   });
+   var btn2 = document.createElement("button");
+    btn.className = "btn btn-primary me-md-2"
+    btn.innerText=("Yes");
+    btn2.className = "btn btn-danger me-md-2";
+    btn2.innerText = "No";
+    btnOption.appendChild(btn);
+    btnOption.appendChild(btn2);
+  
+
+  btn.addEventListener('click', () => {
+    createCard();
+  })
+  
+  btn2.addEventListener('click', () => {
+    clearJoke();
+  });
  }
+ //****End of function****/
 
 
 
 
 
-// Event listeners and unnamed functions for buttons:
+//****Event listeners and unnamed functions for buttons:
 jokeButton.addEventListener('click', getJoke)
 
 setButton.addEventListener('click', () => {
@@ -87,4 +110,27 @@ punchButton.addEventListener('click', () => {
           addButton();
     }
 });
+//*********/
 
+function createCard() {
+
+  let card = document.createElement("div");
+  card.className = "card"
+
+  let cardBody = document.createElement("div");
+  cardBody.className = "card-body";
+
+  let title = document.createElement('h5');
+  title.innerText = tagline;
+  title.className = 'card-title';
+
+  let cardText = document.createElement("p");
+  cardText.innerText = punchline;
+  cardText.className = "card-text";
+
+ cardContainer.appendChild(card);
+  card.appendChild(cardBody.appendChild(title));
+  title.appendChild(cardText);
+
+}
+//****End of function****/
