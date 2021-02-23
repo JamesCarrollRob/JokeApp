@@ -7,4 +7,4 @@ console.log("This joke was saved on: " + date + " At " + time + ".");
 
 var currentDay =  today.getDay();
 var nameDay = days[currentDay];
-console.log(nameDay);
+console.log("This joke was saved on" + nameDay + ", " + date + " at " + time);

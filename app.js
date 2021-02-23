@@ -17,7 +17,6 @@ var jokeList = []
 var fetchCheck = false //proves whether or not fetch the get joke button was pushed first when page first loads
 
 
-
 //Fetches an array of ten joke objects and saves the object at index 3 as a variable
 function getJoke(){
 fetch(url)
@@ -25,7 +24,7 @@ fetch(url)
   .then(function(data) {
       fetchCheck = true;
       let joke = data[3];
-      jokeList = data;
+      jokeList.unshift(joke);
       tagline = joke.setup;
       punchline = joke.punchline;
       console.log(data);
@@ -79,17 +78,54 @@ function clearJoke() {
 
   btn.addEventListener('click', () => {
     createCard();
+    getTime();
+    
   })
   
   btn2.addEventListener('click', () => {
     clearJoke();
+    jokeList.shift([0]);
+
   });
  }
  //****End of function****/
 
 
+//****Function logs the time the joke was saved to the console****/
+function getTime() {
+var today = new Date();
+var date = today.getFullYear() + ', '+ (today.getMonth() + 1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+const days = ["Sunday", "Monday", "Tuesday", "Wednsday", "Thursday", "Friday", "Saturday"]
+var currentDay =  today.getDay();
+var nameDay = days[currentDay];
+console.log("This joke was saved on " + nameDay + ", " + date + " at " + time)
+}
+//****End of function****/
 
+function createCard() {
 
+  let card = document.createElement("div");
+  card.className = "card"
+
+  let cardBody = document.createElement("div");
+  cardBody.className = "card-body";
+
+  let title = document.createElement('h5');
+  title.innerText = tagline;
+  title.className = 'card-title';
+
+  let cardText = document.createElement("p");
+  cardText.innerText = punchline;
+  cardText.className = "card-text";
+
+ cardContainer.appendChild(card);
+  card.appendChild(cardBody.appendChild(title));
+  title.appendChild(cardText);
+  // console.log("This joke was saved on " + nameDay + ", " + date + " at " + time);
+
+}
+//****End of function****/
 
 //****Event listeners and unnamed functions for buttons:
 jokeButton.addEventListener('click', getJoke)
@@ -111,26 +147,3 @@ punchButton.addEventListener('click', () => {
     }
 });
 //*********/
-
-function createCard() {
-
-  let card = document.createElement("div");
-  card.className = "card"
-
-  let cardBody = document.createElement("div");
-  cardBody.className = "card-body";
-
-  let title = document.createElement('h5');
-  title.innerText = tagline;
-  title.className = 'card-title';
-
-  let cardText = document.createElement("p");
-  cardText.innerText = punchline;
-  cardText.className = "card-text";
-
- cardContainer.appendChild(card);
-  card.appendChild(cardBody.appendChild(title));
-  title.appendChild(cardText);
-
-}
-//****End of function****/

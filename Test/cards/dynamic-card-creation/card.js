@@ -6,10 +6,7 @@ btn.addEventListener("click", () =>{
 });
 
 function createCard() {
-
-    // let cardContainer = document.createElement("div");
-    // cardContainer.className = "container";
-
+   
     let card = document.createElement("div");
     card.className = "card"
 
@@ -24,8 +21,19 @@ function createCard() {
     cardText.innerText = "Saved Joke"
     cardText.className = "card-text";
 
+    let removeBtn = document.createElement("button");
+    removeBtn.className = "btn btn-primary";
+    removeBtn.innerText = "Remove";
+
+    
+
    mainDiv.appendChild(card);
     card.appendChild(cardBody.appendChild(title));
-    title.appendChild(cardText);
+    title.appendChild(cardText.appendChild(removeBtn));
 
-}
+     removeBtn.addEventListener("click", () => {
+        $(this).removeClass('.card');
+     });
+    }
+    
+
