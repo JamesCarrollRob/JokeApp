@@ -1,8 +1,7 @@
 //TO DO:
-//write function that iterates through joke object and chooses a random joke
-//when all jokes in fetch object have been used, make another fetch call for new set of ten jokes
-//Display time and log what time the joke was displayed
-//Give option to save joke. If joke is saved, a card is created with joke info 
+
+//Display time and log what time the joke was displayed in console and/or on the card
+
 
 
 
@@ -21,6 +20,7 @@ var fetchCheck = false //proves whether or not fetch the get joke button was pus
 function getJoke(){
 fetch(url)
   .then(response => response.json())
+  .catch(error => alert("There was a problem! Cannot retrieve jokes at this time ", error))
   .then(function(data) {
       fetchCheck = true;
       let joke = data[3];
@@ -97,9 +97,12 @@ var today = new Date();
 var date = today.getFullYear() + ', '+ (today.getMonth() + 1)+'-'+today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 const days = ["Sunday", "Monday", "Tuesday", "Wednsday", "Thursday", "Friday", "Saturday"]
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
+var currentMonth = today.getMonth();
 var currentDay =  today.getDay();
 var nameDay = days[currentDay];
-console.log("This joke was saved on " + nameDay + ", " + date + " at " + time)
+var nameMonth = months[currentMonth];
+console.log("This joke was saved on " + nameDay + ", " + date + " at " + time + ", "+ nameMonth)
 }
 //****End of function****/
 

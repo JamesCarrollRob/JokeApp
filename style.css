@@ -10,6 +10,7 @@ p {
 
 .card{
     width: 18rem;
+    padding: 1em;
 }
 
 .container{
@@ -25,6 +26,7 @@ p {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 h2 {
