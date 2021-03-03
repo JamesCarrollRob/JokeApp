@@ -25,6 +25,7 @@ fetch(url)
       fetchCheck = true;
       let joke = data[3];
       jokeList.unshift(joke);
+      jokeID = joke.id;
       tagline = joke.setup;
       punchline = joke.punchline;
       console.log(data);
@@ -77,8 +78,10 @@ function clearJoke() {
   
 
   btn.addEventListener('click', () => {
+     
     createCard();
     getTime();
+      
     
   })
   
@@ -94,7 +97,7 @@ function clearJoke() {
 //****Function logs the time the joke was saved to the console****/
 function getTime() {
 var today = new Date();
-var date = today.getFullYear() + ', '+ (today.getMonth() + 1)+'-'+today.getDate();
+
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 const days = ["Sunday", "Monday", "Tuesday", "Wednsday", "Thursday", "Friday", "Saturday"]
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
@@ -102,7 +105,8 @@ var currentMonth = today.getMonth();
 var currentDay =  today.getDay();
 var nameDay = days[currentDay];
 var nameMonth = months[currentMonth];
-console.log("This joke was saved on " + nameDay + ", " + date + " at " + time + ", "+ nameMonth)
+var date = today.getFullYear() + ', '+ nameMonth +', '+today.getDate();
+console.log("This joke was saved on " + nameDay + ", " + date + " at " + time + ", ")
 }
 //****End of function****/
 
