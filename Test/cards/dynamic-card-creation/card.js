@@ -32,8 +32,9 @@ function createCard() {
     title.appendChild(cardText.appendChild(removeBtn));
 
      removeBtn.addEventListener("click", () => {
-        $(this).removeClass('.card');
+        remove('.card');
      });
     }
     
-
+   
+    

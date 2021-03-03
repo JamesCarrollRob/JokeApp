@@ -126,10 +126,31 @@ function createCard() {
   cardText.innerText = punchline;
   cardText.className = "card-text";
 
+  let sndButton = document.createElement("button");
+  sndButton.className = "btn btn-primary btn-sm";
+  sndButton.type = "submit";
+  sndButton.innerText = "send joke"
+
  cardContainer.appendChild(card);
   card.appendChild(cardBody.appendChild(title));
   title.appendChild(cardText);
-  // console.log("This joke was saved on " + nameDay + ", " + date + " at " + time);
+  cardText.appendChild(sndButton);
+  
+  sndButton.addEventListener('click', ()=> {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: tagline,
+    body: punchline,
+    userId: jokeID,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+  })
 
 }
 //****End of function****/
@@ -154,3 +175,16 @@ punchButton.addEventListener('click', () => {
     }
 });
 //*********/
+// fetch('https://jsonplaceholder.typicode.com/posts', {
+//   method: 'POST',
+//   body: JSON.stringify({
+//     title: tagline,
+//     body: punchline,
+//     userId: jokeID,
+//   }),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+// })
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));
