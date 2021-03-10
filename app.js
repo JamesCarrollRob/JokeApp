@@ -155,9 +155,9 @@ function createCard() {
     fetch('https://jsonplaceholder.typicode.com/posts', {
   method: 'POST',
   body: JSON.stringify({
-    title: tagline,
-    body: punchline,
-    userId: jokeID,
+    title: title.innerText,
+    body: cardText.innerText,
+    // userId: jokeID,
   }),
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
