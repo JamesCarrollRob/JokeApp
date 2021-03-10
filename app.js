@@ -147,8 +147,8 @@ function createCard() {
 
  cardContainer.appendChild(card);
   card.appendChild(cardBody.appendChild(title));
-  title.appendChild(cardText);
-  cardText.appendChild(sndButton);
+  card.appendChild(cardText);
+  card.appendChild(sndButton);
   
   //****adds event listener to sndButton. Uses fetch to post data to a server****/
   sndButton.addEventListener('click', ()=> {

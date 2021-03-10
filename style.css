@@ -1,6 +1,13 @@
-p {
-    color: blue;
+
+body {
+    background-color: rgb(51, 153, 255)
+}
+
+ #setup {
+    text-shadow: crimson 1px 1px;
+    color:black;
     font-size: large;
+    padding-top: .5em;
 }
 
 #punchline {
@@ -11,6 +18,7 @@ p {
 .card{
     width: 18rem;
     padding: 1em;
+    border: solid black;
 }
 
 .container{
@@ -20,6 +28,7 @@ p {
 .banner{
     border: black solid;
     padding: 3em;
+    background-color: rgb(255, 0, 0);
 }
 
 .savedJokes{
