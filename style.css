@@ -29,6 +29,7 @@ body {
     border: black solid;
     padding: 3em;
     background-color: rgb(255, 0, 0);
+    text-shadow: rgb(20, 189, 211) 3px 3px;
 }
 
 .savedJokes{

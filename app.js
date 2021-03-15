@@ -13,7 +13,7 @@ const setButton = document.getElementById('getSetup')
 const punchButton = document.getElementById('getPunch')
 const cardContainer = document.getElementById("cards");
 var jokeList = []
-var fetchCheck = false //proves whether or not fetch the get joke button was pushed first when page first loads
+var fetchCheck = false //proves whether or not the get joke button was pushed first.
 
 
 //Fetches an array of ten joke objects and saves the object at index 3 as a variable
@@ -120,10 +120,15 @@ var currentDay =  today.getDay();
 var nameDay = days[currentDay];
 var nameMonth = months[currentMonth];
 var date = today.getFullYear() + ', '+ nameMonth +', '+today.getDate();
-console.log("This joke was saved on " + nameDay + ", " + date + " at " + time + ", ")
+var fullTime = "This joke was saved on " + nameDay + ", " + date + " at " + time + " ";
+
+ console.log(fullTime);
+ return fullTime; // Returns the fullTime variable so that the createCard function can call getTime and log the time on the card
 }
 //****End of function****/
 
+
+//****Creates a card with the saved joke****/
 function createCard() {
 
   let card = document.createElement("div");
@@ -143,12 +148,17 @@ function createCard() {
   let sndButton = document.createElement("button");
   sndButton.className = "btn btn-primary btn-sm";
   sndButton.type = "submit";
-  sndButton.innerText = "Send Joke"
+  sndButton.innerText = "Send Joke";
+
+   let timeLog = document.createElement("p");
+   var cardTime = getTime()
+   timeLog.innerText =cardTime;
 
  cardContainer.appendChild(card);
   card.appendChild(cardBody.appendChild(title));
   card.appendChild(cardText);
   card.appendChild(sndButton);
+  card.appendChild(timeLog);
   
   //****adds event listener to sndButton. Uses fetch to post data to a server****/
   sndButton.addEventListener('click', ()=> {
@@ -157,7 +167,7 @@ function createCard() {
   body: JSON.stringify({
     title: title.innerText,
     body: cardText.innerText,
-    // userId: jokeID,
+    
   }),
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
