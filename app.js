@@ -40,10 +40,9 @@ fetch(url)
 //****End of function****/
 
 function randomJoke() {
-  // if (jokeList.length>3){
-    // alert("you have unlocked the hidden feature!")
+  
      return jokeList[Math.floor(Math.random()*jokeList.length)];
-  // }
+  
 }
 
     
@@ -99,7 +98,7 @@ function clearJoke() {
     
   })
   
-  btn2.addEventListener('click', () => {
+  btn2.addEventListener('click', () => { //Saves the liked joke to the jokeList array
     clearJoke();
     jokeList.shift([0]);
 
@@ -108,10 +107,9 @@ function clearJoke() {
  //****End of function****/
 
 
-//****Function logs the time the joke was saved to the console****/
+//****Function logs the time the joke was saved to the console and returns the time so that this function can be called for later use on the createCard function****/
 function getTime() {
 var today = new Date();
-
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 const days = ["Sunday", "Monday", "Tuesday", "Wednsday", "Thursday", "Friday", "Saturday"]
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
