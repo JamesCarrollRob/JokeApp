@@ -7,3 +7,8 @@
      flex-direction: row; 
      flex-wrap: wrap;  
 }
+
+#animate{
+    font-size: small;
+    visibility: hidden;
+}

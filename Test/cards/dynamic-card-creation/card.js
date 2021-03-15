@@ -1,11 +1,24 @@
 const btn = document.getElementById("createCard");
 const mainDiv = document.getElementById("mainDiv");
+const animate = document.getElementById("animate");
 
 btn.addEventListener("click", () =>{
+   
+   $("#animate").css('visibility', 'visible')
+      .text("Hello world!")
+      .fadeIn(3000)
+      .fadeOut(3000);
+    
    createCard();
 });
 
 function createCard() {
+      
+   
+   // animate.innerText = "Can you see this?"
+    
+   
+
    
     let card = document.createElement("div");
     card.className = "card"
@@ -36,5 +49,17 @@ function createCard() {
      });
     }
     
-   
     
+   
+  // With the element initially hidden, we can show it slowly:
+  $( "btn" ).click(function() {
+    $( "#animate" ).fadeIn( "slow", function() {
+      // Animation complete
+    });
+  });
+    
+//   $("button").click(function(){
+//    $("#div1").fadeIn();
+//    $("#div2").fadeIn("slow");
+//    $("#div3").fadeIn(3000);
+//.css('visibility', 'hidden')

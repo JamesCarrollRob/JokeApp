@@ -1,6 +1,7 @@
 //TO DO:
-
-//Display time and log what time the joke was displayed in console and/or on the card
+// 1) Display random joke from jokeList in banner with animation
+// 2) Make sure app is responsive to meet requirements
+// 3) Complete the Readme file
 
 
 
@@ -33,7 +34,9 @@ fetch(url)
       
   })
     if (jokeList.length > 2){
-      console.log(randomJoke(jokeList)); 
+      randomJoke()
+      // console.log(randomJoke(jokeList)); 
+      
     }
    clearJoke();
 }
@@ -41,7 +44,11 @@ fetch(url)
 
 function randomJoke() {
   
-     return jokeList[Math.floor(Math.random()*jokeList.length)];
+   let returnedJoke = jokeList[Math.floor(Math.random()*jokeList.length)];
+   console.log(returnedJoke);
+   alert(returnedJoke.setup);
+   alert(returnedJoke.punchline);
+
   
 }
 
