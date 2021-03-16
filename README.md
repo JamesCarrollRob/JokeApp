@@ -6,14 +6,18 @@ and time it was saved. A "send" button is generated on the "joke card". Clicking
 
 If the joke is disliked, a "joke card" is not generated and the joke object is not saved to the jokeList variable.
 
-Instructions:
+<h2>Instructions:</h2>
 1) open index.html
-2) Buttons must be clicked in this order 1."New Joke" 2. "Setup" 3. "Punchline"
+2) Buttons must be clicked in this order:
+     1."New Joke" 
+     2."Setup"
+     3. "Punchline" 
+     each time the user wants a new joke.
 
-Features featured in this app:
+Features found in this app:
 
 <h2>1) Retrieve data from an external API</h2> 
-<p>The getJoke function is initiated when the "get joke" button is clicked. It uses fetch to retrieve an array of ten joke objects and saves the one at index 3 to a variable to be manipulated for later use in the app.</p>
+<p>The getJoke function is initiated when the "get joke" button is clicked. It uses fetch to retrieve an array of ten joke objects and saves the one at index 3 to a variable to be manipulated for later use in the app. The array retrieved from the API is displayed in the console.</p>
 
 <h2>2) Post to an external API</h2>
 <p>Once a "joke card" is created, a button is included on the card called "send joke". This button uses fetch to send a POST requst to jsonplaceholder.typicode.com/posts. The successfull POST request is proven through a console message by giving the posted joke object the id 101.</P>
