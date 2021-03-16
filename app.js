@@ -1,8 +1,3 @@
-//TO DO:
-// 2) Make sure app is responsive to meet requirements
-// 3) Complete the Readme file
-
-
 
 
 const url = "https://official-joke-api.appspot.com/jokes/ten"
@@ -129,7 +124,7 @@ var fullTime = "This joke was saved on " + nameDay + ", " + date + " at " + time
 //****End of function****/
 
 
-//****Creates a card with the saved joke****/
+//****Creates a card with the saved joke, time it was saved and a send joke button ****/
 function createCard() {
 
   let card = document.createElement("div");
