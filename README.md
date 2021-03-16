@@ -18,8 +18,11 @@ Features featured in this app:
 <h2>2) Post to an external API</h2>
 <p>Once a "joke card" is created, a button is included on the card called "send joke". This button uses fetch to send a POST requst to jsonplaceholder.typicode.com/posts. The successfull POST request is proven through a console message by giving the posted joke object the id 101.</P>
 
-<h2>3) Create an array, dictionary or list, populate it with multiple values, retrieve at least one value, and use or display it in your application</P>
+<h2>3) Create an array, dictionary or list, populate it with multiple values, retrieve at least one value, and use or display it in your application</h2>
 <p> The jokeList variable is an empty array that is populated with liked joke objects. When the length of the array is greater than two, everytime the New Joke button is pushed, in addition to fetching a new joke from an external API, it calls the randomJoke function. This function pulls a random joke object from the array and assigns it to a variable named returnedJoke. The returnedJoke variable then displays the setup and punchline of the joke object in the site banner using some jquery animation methods.</p> 
 
 <h2>4) Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event)</h2>
 <p>Just in case the user wants to always remember what time, day and year they spit out their coffee and saved their funny joke to a cleverly generated "joke card", the time, date and year is diplayed on the "joke card" and logged in the console so they will never forget!</P>
+
+
+<p> This app utilizes bootstrap's built in responsiveness features and is functional and viewable through most devices. Code in app.js is heavily commented and should be fairly easy to follow.</p>
