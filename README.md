@@ -1,1 +1,5 @@
- JokeApp
+Welcome to the Joke Machine!
+This app generates random jokes pulled from an external api and displays them in your browser. It gives the user the  option to like or dislike the joke after
+the setup and punchline are displayed via clicking the aforementioned named buttons on the screen. If the joke is liked, a "joke card" is created with the complete joke and time it was saved. A "send" button is generated on the "joke card". Clicking this button uses Fetch's POST method to post the joke to a server. The "server" in this case is: jsonplaceholder.typicode.com/posts. The post response is proven through a console log message which displays the posted joke and the id: 101. There are 100 posts on the server so the 101 id proves the POST request was successful. The liked joke is also saved to an array assigned to the variable jokeList. Once the jokeList length reaches three or more jokes, a random joke is chosen from the array and displayed in the app banner using some simple jquery animation. 
+
+If the joke is disliked, a "joke card" is not generated and the joke object is not saved to the jokeList variable.
