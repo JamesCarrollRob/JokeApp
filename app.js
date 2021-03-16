@@ -1,5 +1,4 @@
 //TO DO:
-// 1) Display random joke from jokeList in banner with animation
 // 2) Make sure app is responsive to meet requirements
 // 3) Complete the Readme file
 
@@ -17,7 +16,7 @@ var jokeList = []
 var fetchCheck = false //proves whether or not the get joke button was pushed first.
 
 
-//Fetches an array of ten joke objects and saves the object at index 3 as a variable
+//Fetches an array of ten joke objects and saves the object at index 3 as a variable. Also calls the randomJoke function if the jokeList length is greater than 2.
 function getJoke(){
 fetch(url)
   .then(response => response.json())
@@ -35,28 +34,25 @@ fetch(url)
   })
     if (jokeList.length > 2){
       randomJoke()
-      // console.log(randomJoke(jokeList)); 
-      
     }
    clearJoke();
 }
 //****End of function****/
 
+//**Chooses a random joke from the jokeList and displays it in the banner as a jquery animation and the complete joke object in the console****/
 function randomJoke() {
   
-   let returnedJoke = jokeList[Math.floor(Math.random()*jokeList.length)];
+   let returnedJoke = jokeList[Math.floor(Math.random()*jokeList.length)]; //returnedJoke variable is a random joke chosen from the jokeList
    console.log(returnedJoke);
-   alert(returnedJoke.setup);
-   alert(returnedJoke.punchline);
-
+  
+   $("#animate")
+      .text(returnedJoke.setup).fadeIn(3000).fadeOut(3000);
+   setTimeout(function(){
+     $("#animate").text(returnedJoke.punchline).fadeIn(2000).fadeOut(2000);
+   }, 6000);
   
 }
-
-    
-
-
-
-
+//**End of function****/
 
 //****Displays the setup for the joke from the joke object****/
 function displaySetup (){
