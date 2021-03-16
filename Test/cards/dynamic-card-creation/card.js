@@ -51,15 +51,4 @@ function createCard() {
     
     
    
-  // With the element initially hidden, we can show it slowly:
-  $( "btn" ).click(function() {
-    $( "#animate" ).fadeIn( "slow", function() {
-      // Animation complete
-    });
-  });
-    
-//   $("button").click(function(){
-//    $("#div1").fadeIn();
-//    $("#div2").fadeIn("slow");
-//    $("#div3").fadeIn(3000);
-//.css('visibility', 'hidden')
+  
