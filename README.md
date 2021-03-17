@@ -12,7 +12,7 @@ If the joke is disliked, a "joke card" is not generated and the joke object is n
      <li> <b>Buttons must be clicked in this order each time the user wants a new joke:</b></li>
      <ol type="1">
           <li>"New Joke"</li> 
-     <li>"Setup" clicking this button before the joke array retrived from API will result in an alert error.</li>
+     <li>"Setup" clicking this button before the joke array is retrived from API will result in an alert error.</li>
           <li>"Punchline"</li> 
      </ol>
 </ol>     
