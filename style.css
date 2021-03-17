@@ -28,8 +28,10 @@ body {
 .banner{
     border: black solid;
     padding: 3em;
+    padding-top: 2em;
     background-color: rgb(255, 0, 0);
     text-shadow: rgb(20, 189, 211) 1px 1px;
+    height: 175px;
 }
 
 .savedJokes{

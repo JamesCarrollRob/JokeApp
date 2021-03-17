@@ -27,7 +27,7 @@ fetch(url)
 
       
   })
-    if (jokeList.length > 2){
+    if (jokeList.length > 1){
       randomJoke()
     }
    clearJoke();
