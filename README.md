@@ -8,8 +8,8 @@ If the joke is disliked, a "joke card" is not generated and the joke object is n
 
 <h2>Instructions:</h2>
 <ol type="1">
-     <li>1) open index.html</li>
-     <li>2) Buttons must be clicked in this order each time the user wants a new joke:</li>
+     <li> open index.html</li>
+     <li> Buttons must be clicked in this order each time the user wants a new joke:</li>
      <ol type="1">
           <li>1."New Joke"</li> 
      <li>2."Setup" clicking this button before the joke array retrived from API will result in an alert error.</li>
