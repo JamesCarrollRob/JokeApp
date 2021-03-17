@@ -7,12 +7,15 @@ and time it was saved. A "send" button is generated on the "joke card". Clicking
 If the joke is disliked, a "joke card" is not generated and the joke object is not saved to the jokeList variable.
 
 <h2>Instructions:</h2>
-1) open index.html
-2) Buttons must be clicked in this order:
-     1."New Joke" 
-     2."Setup"
-     3. "Punchline" 
-     each time the user wants a new joke.
+<ol type="1">
+     <li>1) open index.html</li>
+     <li>2) Buttons must be clicked in this order each time the user wants a new joke:</li>
+     <ol type="1">
+          <li>1."New Joke"</li> 
+     <li>2."Setup" clicking this button before the joke array retrived from API will result in an alert error.</li>
+          <li>3."Punchline"</li> 
+     </ol>
+</ol>     
 
 Features found in this app:
 
