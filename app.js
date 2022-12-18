@@ -1,6 +1,6 @@
 
 
-const url = "https://official-joke-api.appspot.com/jokes/ten"
+const url = "https://official-joke-api.appspot.com/jokes/"
 const p = document.getElementById('setup');
 const p2 = document.getElementById('punchline')
 const jokeButton = document.getElementById('getJoke')
